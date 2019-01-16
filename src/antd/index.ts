@@ -1,0 +1,6 @@
+export { default as Button } from 'antd/es/button'
+export { default as Icon } from 'antd/es/icon'
+export { default as Input } from 'antd/es/input'
+export { default as Modal } from 'antd/es/modal'
+export { default as Table } from 'antd/es/table'
+export { default as Message } from 'antd/es/message'

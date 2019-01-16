@@ -1,0 +1,108 @@
+@import 'variable.css';
+
+:root {
+  --form-width: 395px;
+  --form-width-val: 395;
+  --input-height: 44px;
+}
+
+@custom-media --sm-home (width < 425px);
+
+#home {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.form-home {
+  width: 100%;
+  max-width: var(--form-width);
+  margin: 0 auto;
+  text-align: center;
+
+  .f-h-logo {
+    max-width: var(--form-width);
+    margin: 0 auto;
+  }
+
+  .f-h-vin {
+    position: relative;
+    visibility: hidden;
+    transition: height .2s ease-in;
+    background-repeat: no-repeat;
+    border: 1px solid #A2A2A2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
+    border-radius: 8px;
+
+    .f-h-vin-ct {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 10%;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #A2A2A2;
+    }
+
+    &:after {
+      border-top-color: #1E1E1E;
+      transform-origin: center center;
+      transform: translateY(-2px)
+    }
+  }
+
+  .ant-input {
+    background-color: #353535;
+    font-size: 16px;
+    height: var(--input-height);
+    border: 0;
+    color: #FFF;
+    padding-left: 20px;
+    padding-rigth: 50px;
+  }
+
+  .ant-input-affix-wrapper 
+  .ant-input-suffix {
+    right: 0;
+  }
+
+  .btn-capture {
+    background-color: #6B6B6B;
+    background-image: none;
+    font-size: 24px;
+    color: #FFF;
+    border: 0;
+    height: var(--input-height);
+    width: 72px;
+
+    &:hover, 
+    &:focus {
+      color: #FFF;
+      background-color: #6B6B6B;
+      background-image: none;
+    }
+  }
+}
+
+@media (--sm-home) {
+  .form-home {
+    margin-left: 15px;
+    margin-right: 15px;
+
+    .f-h-logo {
+      width: 80%;
+    }
+  }
+}

@@ -1,0 +1,227 @@
+@define-mixin cposition $width, $height, $top, $left {
+  width: calc($width / 364 * 100%);
+  left: calc($left / 364 * 100%);
+  height: calc($height / 485 * 100%);
+  top: calc($top / 485 * 100%);
+}
+
+.car-part {
+  background: url(~@images/car_al.png) center center no-repeat;
+  background-size: 100% auto;
+  max-width: 364px;
+  cursor: pointer;
+  position: relative;
+  
+  &:after {
+    content: '';
+    padding-top: calc(485 / 364 * 100%);
+    display: block;
+  }
+}
+
+@media (--phone) {
+  
+  .car-part {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.cp-cell { 
+  max-width: 100%; 
+  background-size: 100%;
+  position: absolute;
+  transition: background-image .3s linear;
+
+  &.active {
+    background-image: url(~@images/car-parts-sprites.png); 
+  }
+}
+ 
+.cp-FRONT_BAOXIANGANG { 
+  background-position: 0 0%; 
+  background-size: 100%;
+  @mixin cposition 127, 22, 13, 117;
+}
+
+.cp-BACK_BAOXIANGANG { 
+  background-position: 0 1.300236%; 
+  background-size: 100.793651%;
+  @mixin cposition 126, 21, 450, 119;
+}
+
+.cp-TOPFRONT_FADONGJIGAI { 
+  background-position: 0 2.642901%; 
+  background-size: 118.691589%; 
+  @mixin cposition 107, 86, 91, 128;
+}
+
+.cp-TOPFRONT_DANGFENGBOLI { 
+  background-position: 0 7.771084%; 
+  background-size: 132.291667%; 
+  @mixin cposition 96, 53, 170, 134;
+}
+
+.cp-TOPBACK_XINGLIXIANGGAI { 
+  background-position: 0 10.820452%; 
+  background-size: 154.878049%; 
+  @mixin cposition 82, 31, 366, 142;
+}
+
+.cp-TOPBACK_DANGFENGBOLI { 
+  background-position: 0 12.777445%; 
+  background-size: 154.878049%; 
+  @mixin cposition 82, 46, 324, 141;
+}
+
+.cp-TOP_CHEDING { 
+  background-position: 0 16.027228%; 
+  background-size: 184.057971%; 
+  @mixin cposition 69, 97, 225, 147;
+}
+
+.cp-FRONT_BAOXIANGANG_ZHONGWANG { 
+  background-position: 0 21.090047%; 
+  background-size: 198.4375%; 
+  @mixin cposition 64, 25, 34, 148;
+}
+
+.cp-RIGHT_BACK_ZIBAN { 
+  background-position: 0 23.649907%; 
+  background-size: 254%;
+  @mixin cposition 50, 102, 295, 296; 
+}
+
+.cp-LEFT_BACK_ZIBAN { 
+  background-position: 0 29.981378%; 
+  background-size: 254%; 
+  @mixin cposition 50, 102, 295, 18;
+}
+
+.cp-RIGHT_BACK_CHEMEN { 
+  background-position: 0 35.3902%; 
+  background-size: 259.183673%; 
+  @mixin cposition 49, 60, 258, 297;
+}
+
+.cp-LEFT_BACK_CHEMEN { 
+  background-position: 0 39.019964%; 
+  background-size: 259.183673%; 
+  @mixin cposition 49, 60, 258, 18;
+}
+
+.cp-RIGHT_FRONT_CHEMEN { 
+  background-position: 0 42.935445%; 
+  background-size: 270.212766%; 
+  @mixin cposition 47, 71, 187, 300;
+}
+
+.cp-LEFT_FRONT_CHEMEN { 
+  background-position: 0 47.25944%; 
+  background-size: 270.212766%; 
+  @mixin cposition 47, 71, 187, 17;
+}
+
+.cp-RIGHT_FRONT_ZIBAN { 
+  background-position: 0 52.219482%; 
+  background-size: 282.222222%; 
+  @mixin cposition 45, 91, 93, 302;
+}
+
+.cp-LEFT_FRONT_ZIBAN { 
+  background-position: 0 57.82984%; 
+  background-size: 282.222222%; 
+  @mixin cposition 45, 91, 93, 17;
+}
+
+.cp-RIGHT_BACK_LUNTAI { 
+  background-position: 0 61.653685%; 
+  background-size: 288.636364%;
+  @mixin cposition 44, 44, 311, 319; 
+}
+
+.cp-RIGHT_FRONT_LUNTAI { 
+  background-position: 0 64.289994%; 
+  background-size: 288.636364%;
+  @mixin cposition 44, 44, 120, 319; 
+}
+
+.cp-LEFT_BACK_LUNTAI { 
+  background-position: 0 66.926303%; 
+  background-size: 288.636364%; 
+  @mixin cposition 44, 44, 311, 1;
+}
+
+.cp-LEFT_FRONT_LUNTAI { 
+  background-position: 0 69.562612%; 
+  background-size: 288.636364%; 
+  @mixin cposition 44, 44, 120, 1;
+}
+
+// .cpyouhouchedeng2 { background-position: 0 71.175428%; background-size: 352.777778%; }
+// .cpzuohouchedeng2 { background-position: 0 72.356763%; background-size: 352.777778%; }
+// .cpyoucedadeng1 {  background-position: 0 73.364761%; background-size: 384.848485%; }
+// .cpzuocedadeng1 { background-position: 0 74.307602%; background-size: 384.848485%; }
+
+.cp-RIGHT_FRONT_CHEMENBOLI { 
+  background-position: 0 77.300242%;
+  background-size: 437.931034%;
+  @mixin cposition 29, 60, 203, 267;
+}
+
+.cp-LEFT_FRONT_CHEMENBOLI { 
+  background-position: 0 80.992736%;
+  background-size: 437.931034%;
+  @mixin cposition 29, 60, 203, 68;
+}
+
+.cp-RIGHT_BACK_CHEMENBOLI { 
+  background-position: 0 84.993925%;
+  background-size: 470.37037%;
+  @mixin cposition 27, 67, 264, 267;
+}
+
+.cp-LEFT_BACK_CHEMENBOLI { 
+  background-position: 0 89.064399%;
+  background-size: 470.37037%;
+  @mixin cposition 27, 67, 264, 70;
+}
+
+// .cpyoucehoushijing1 { background-position: 0 90.229547%; background-size: 529.166667%; }
+// .cpzuocehoushijing1 { background-position: 0 91.053561%; background-size: 529.166667%; }
+
+.cp-RIGHT_BACK_WEIDENG { 
+  background-position: 0 92.312241%; 
+  background-size: 552.173913%; 
+  @mixin cposition 23, 22, 378, 291;
+}
+
+.cp-LEFT_BACK_WEIDENG { 
+  background-position: 0 93.613247%; 
+  background-size: 552.173913%;
+  @mixin cposition 23, 22, 378, 50; 
+}
+
+.cp-RIGHT_FRONT_DADENG { 
+  background-position: 0 95.026643%; 
+  background-size: 1058.333333%; 
+  @mixin cposition 12, 24, 91, 316; 
+}
+
+.cp-LEFT_FRONT_DADENG { 
+  background-position: 0 96.447602%; 
+  background-size: 1058.333333%; 
+  @mixin cposition 12, 24, 91, 37; 
+}
+
+.cp-RIGHT_BACK_SHIJINGZONGCHENG { 
+  background-position: 0 98.217469%; 
+  background-size: 1587.5%; 
+  @mixin cposition 8, 30, 177, 290; 
+}
+
+.cp-LEFT_BACK_SHIJINGZONGCHENG { 
+  background-position: 0 100%; 
+  background-size: 1587.5%; 
+  @mixin cposition 8, 30, 177, 66; 
+}

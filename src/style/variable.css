@@ -1,0 +1,15 @@
+@custom-media --phone (width < 544px);
+@custom-media --tablet (width < 768px);
+@custom-media --desktop (width < 992px);
+@custom-media --large-desktop (width < 1200px);
+
+:root {
+  --outer-container-width: 1200px;
+  --outer-container-padding: 28px;
+  --container-width: 530px;
+  --inner-container-padding: 15px;
+}
+
+
+@custom-media --logo-container (width < 1000px);
+@custom-media --small-container (width < 530px);

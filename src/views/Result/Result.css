@@ -1,0 +1,98 @@
+@import 'variable.css';
+@import 'mixin.css';
+
+.c-header {
+
+  .c-h-subtitle {
+    display: block;
+    font-size: 14px;
+    color: #9B9B9B;
+    line-height: 200%;
+  }
+}
+
+.loss-section {
+  margin: 30px 0 24px;
+
+  .l-pin {
+    background-color: rgba(112, 112, 112, .2);
+    line-height: 30px;
+    padding: 0 18px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: inline-block;
+  }
+
+  .car-part {
+    cursor: default;
+    margin: 0 auto;
+    transform-origin: 50% 50%;
+    transform: rotate(90deg);
+    max-width: calc(485 / 364 * 200px);
+    width: calc(364 / 485 * 100% - 364 / 485 * 30px);
+  }
+
+  .loss-table-container {
+    padding: 15px 15px 0;
+    text-align: center;
+
+    .ant-table-bordered .ant-table-thead > tr > th, 
+    .ant-table-bordered .ant-table-tbody > tr > td {
+      border-color: #535353;
+      text-align: center;
+      background-color: #222222;
+      color: #FFF;
+    }
+
+    .ant-table-bordered .ant-table-header > table, 
+    .ant-table-bordered .ant-table-body > table {
+      border-color: #535353;
+    }
+  }
+}
+
+.loss-table {
+
+  .img-td {
+    width: 120px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    margin: 0 auto;
+
+    &:after {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+  }
+  
+  .img-td-inner {
+    @mixin posAbsCenter;
+    background-color: #000;
+    text-align: center;
+  
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.btn-back.ant-btn {
+  font-size: 16px;
+  height: 40px;
+  width: calc(100% - 30px);
+  max-width: 220px;
+}
+
+@media (--small-container) {
+  #result.outer-container {
+    padding: 0;
+  }
+
+  .loss-table .img-td {
+    width: 80px;
+  }
+}

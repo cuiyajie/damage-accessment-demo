@@ -1,0 +1,12 @@
+@import url('antd/es/style/index.css');
+@import url('antd/es/button/style/index.css');
+@import url('antd/es/input/style/index.css');
+@import url('antd/es/modal/style/index.css');
+@import url('antd/es/table/style/index.css');
+@import url('antd/es/message/style/index.css');
+
+@import url('variable.css');
+@import url('global.css');
+@import url('button.css');
+
+@import url('components/part.css');

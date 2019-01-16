@@ -1,0 +1,221 @@
+@import "variable.css";
+@import "mixin.css";
+@custom-media --tiny-container (width < 450px);
+
+.uploader {
+  color: rgba(255, 255, 255, .3);
+  margin-top: 20px;
+  padding: 0 60px;
+
+  .u-header {
+    margin-bottom: 20px;
+  }
+
+  .u-items {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, .3);
+    border-radius: 8px;
+
+    & + .u-items {
+      margin-top: 20px;
+    }
+
+    .u-item {
+      max-width: 160px;
+      width: calc(50% - 15px);
+
+      &:nth-child(n+3) {
+        margin-top: 20px;
+      }
+
+      .u-i-container {
+        position: relative;
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        vertical-align: middle;
+
+        &:after {
+          content: '';
+          padding-top: calc(107 / 143 * 100%);
+          display: block;
+        }
+
+        .u-i-c-inner {
+          @mixin posAbsCenter;
+          background-color: #2E2E2E;
+
+          &.image {
+            text-align: center;
+          }
+
+          &.flex {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+          }
+
+          &.error {
+
+            .u-i-c-wrap {
+              @mixin posAbsCenter;
+              z-index: 5;
+              font-size: 12px;
+              color: #FFF;
+              text-align: center;
+              padding: 10px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            }
+
+            &:after {
+              content: '';
+              @mixin posAbsCenter;
+              background-color: rgba(77, 29, 29, .7);
+              z-index: 2;
+            }
+          }
+          
+          .anticon {
+            font-size: 30px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+      .u-i-text {
+
+        .u-i-t-title {
+          color: #FFF;
+          line-height: 225%;
+        }
+
+        .u-i-t-desc {
+          font-size: 12px;
+          line-height: 175%;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .u-footer {
+    margin-top: 20px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-plus.ant-btn {
+    border: 0;
+    background-color: #2E2E2E;
+    color: rgba(255, 255, 255, .3);
+    font-size: 20px;
+    height: 36px;
+    padding: 0 15px !important;
+    margin-right: 15px;
+
+    &:hover,
+    &:focus {
+      background-color: #2E2E2E;
+    }
+  }
+
+  .btn-image-clear.ant-btn {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: #000;
+    color: #FFF;
+    z-index: 10;
+
+    &:hover,
+    &:focus {
+      background: #000;
+      color: #FFF;
+    }
+
+    .anticon {
+      font-size: 16px !important;
+      margin: 18px 14px 0 0;
+    }
+  }
+}
+
+@media (--small-container) {
+
+  #upload.outer-container .container {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .uploader {
+    padding: 0;
+
+    .u-header {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (--tiny-container) {
+  .uploader .u-footer {
+    font-size: 13px;
+  }
+}
+
+.accessing-modal.ant-modal {
+  top: 50% !important;
+  margin: -66px auto 0 !important;
+  width: 132px !important;
+  
+  .ant-modal-content {
+    background-color: #000;
+    color: #FFF;
+
+    span.accessing {
+      font-size: 14px;
+
+      .dots-loading {
+        animation: accessing 2s steps(4, end) infinite;
+        display: inline-block;
+        vertical-align: bottom;
+        overflow: hidden;
+        width: 18px;
+        border: 0 solid #000;
+      }
+    }
+  }
+}
+
+@keyframes accessing {
+  0% {
+    border-right-width: 18px;
+  }
+
+  33.3% {
+    border-right-width: 12px;
+  }
+
+  66.6% {
+    border-right-width: 6px;
+  }
+
+  100% {
+    border-right-width: 0px;
+  }
+}

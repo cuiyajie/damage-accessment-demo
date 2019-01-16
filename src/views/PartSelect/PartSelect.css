@@ -1,0 +1,35 @@
+@import 'variable.css';
+
+#select {
+  text-align: center;
+
+  .car-part {
+    margin: 50px auto 0;
+
+    .car-part-dir {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      right: 0;
+      font-size: 18px;
+      
+      &:before {
+        position: absolute;
+        left: -20px;
+        content: '驾驶室侧';
+      }
+
+      &:after {
+        position: absolute;
+        right: -20px;
+        content: '副驾驶侧';
+      }
+    }
+  }
+}
+
+@media (--phone) {
+  #select .car-part .car-part-dir {
+    font-size: 14px;
+  }
+}
